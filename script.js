@@ -5,7 +5,7 @@ const state = {
 
 // inicializa o gráfico vazio
 const initChart = () => {
-    const ctx = document.getElementById("grafico").getContext("2d");
+    const ctx = document.getElementById("grafico").getContext("2d"); // https://www.w3schools.com/js/js_graphics_chartjs.asp
     state.grafico = new Chart(ctx, {
         type: "bar", // tipo de gráfico
         data: {
@@ -47,7 +47,7 @@ const render = () => {
     const listaCores = [];
 
     tabela.innerHTML = state.alunos.map((aluno, index) => {
-        const media = ((aluno.n1 + aluno.n2 + aluno.n3) / 3).toFixed(1);
+        const media = ((aluno.n1 + aluno.n2 + aluno.n3 + aluno.n4) / 4).toFixed(1);
         const config = getStatusConfig(media);
 
         // guarda os nome para os dados 
@@ -61,6 +61,7 @@ const render = () => {
                 <td>${aluno.n1}</td>
                 <td>${aluno.n2}</td>
                 <td>${aluno.n3}</td>
+                <td>${aluno.n4}</td>
                 <td>${media}</td>
                 <td><span class="status-badge" style="background: ${config.bg}; color: #30a53c">${config.text}</span></td>
                 <td>
@@ -95,7 +96,8 @@ document.getElementById("formAluno").addEventListener("submit", (e) => {
         nome: document.getElementById("nome").value,
         n1: Number(document.getElementById("nota1").value),
         n2: Number(document.getElementById("nota2").value),
-        n3: Number(document.getElementById("nota3").value)
+        n3: Number(document.getElementById("nota3").value),
+        n4: Number(document.getElementById("nota4").value)
     };
     state.alunos.push(novoAluno);
     render();
@@ -116,7 +118,8 @@ window.editar = (index) => {
             nome: n,
             n1: Number(prompt("Nota 1:", a.n1)),
             n2: Number(prompt("Nota 2:", a.n2)),
-            n3: Number(prompt("Nota 3:", a.n3))
+            n3: Number(prompt("Nota 3:", a.n3)),
+            n4: Number(prompt("Nota 3:", a.n4))
         };
         render();
     }

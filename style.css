@@ -1,4 +1,10 @@
-
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff0f5; 
+    color: #5d4a51;
+    margin: 0;
+    padding: 20px;
+}
 
 .main-wrapper {
     max-width: 900px;
@@ -10,7 +16,8 @@
     margin-bottom: 30px;
 }
 
-.header-fofo h1 { color: #ff85b2; }
+.header-fofo h1 { 
+    color: #ff85b2; }
 
 .container-flex {
     display: flex;
@@ -93,5 +100,7 @@ td {
 }
 
 @media (max-width: 600px) {
-    .container-flex { flex-direction: column; }
+    .container-flex {
+         flex-direction: column; 
+        }
 }
