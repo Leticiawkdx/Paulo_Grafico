@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header class="header-fofo">
+            <h1>🌸 Notas da Turma 🌸</h1>
+        </header>
+
+        <section class="container-flex">
+            <div class="card form-card">
+                <h3>Cadastrar Aluno</h3>
+                <form id="formAluno">
+                    <input type="text" id="nome" placeholder="Nome do aluno" required>
+                    <input type="number" id="nota1" placeholder="Nota 1" step="0.1" required>
+                    <input type="number" id="nota2" placeholder="Nota 2" step="0.1" required>
+                    <input type="number" id="nota3" placeholder="Nota 3" step="0.1" required>
+                    <button type="submit">Cadastrar!</button>
+                </form>
+            </div>
+
+            <div class="card chart-card">
+                <canvas id="grafico"></canvas>
+            </div>
+        </section>
+
+        <section class="card table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>N1</th>
+                        <th>N2</th>
+                        <th>N3</th>
+                        <th>Média</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela"></tbody>
+            </table>
+        </section>
+    </div>
+
+</body>
+</html>
